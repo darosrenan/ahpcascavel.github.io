@@ -37,8 +37,8 @@
         <script src="js/tailDT.js"></script>
 <script src="js/nouislider.min.js"></script>
 <script src="js/wNumb.js"></script>
-        <script src="data/Classe_1.js"></script>
-        <script src="data/Ecoparque_2.js"></script>
+        <script src="data/Classe_11.js"></script>
+        <script src="data/Ecoparque_12.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -70,7 +70,87 @@
         });
         layer_GoogleSatellite_0;
         map.addLayer(layer_GoogleSatellite_0);
-        function pop_Classe_1(feature, layer) {
+        map.createPane('pane_1_Declividade_1');
+        map.getPane('pane_1_Declividade_1').style.zIndex = 401;
+        var img_1_Declividade_1 = 'data/1_Declividade_1.png';
+        var img_bounds_1_Declividade_1 = [[-25.05124753839778,-53.57586459486381],[-24.855180297698507,-53.33482437164112]];
+        var layer_1_Declividade_1 = new L.imageOverlay(img_1_Declividade_1,
+                                              img_bounds_1_Declividade_1,
+                                              {pane: 'pane_1_Declividade_1'});
+        bounds_group.addLayer(layer_1_Declividade_1);
+        map.createPane('pane_2_InfraViaria_2');
+        map.getPane('pane_2_InfraViaria_2').style.zIndex = 402;
+        var img_2_InfraViaria_2 = 'data/2_InfraViaria_2.png';
+        var img_bounds_2_InfraViaria_2 = [[-25.051548938109114,-53.576251961625545],[-24.854899611619256,-53.33460327271597]];
+        var layer_2_InfraViaria_2 = new L.imageOverlay(img_2_InfraViaria_2,
+                                              img_bounds_2_InfraViaria_2,
+                                              {pane: 'pane_2_InfraViaria_2'});
+        bounds_group.addLayer(layer_2_InfraViaria_2);
+        map.createPane('pane_3_ZPAs_3');
+        map.getPane('pane_3_ZPAs_3').style.zIndex = 403;
+        var img_3_ZPAs_3 = 'data/3_ZPAs_3.png';
+        var img_bounds_3_ZPAs_3 = [[-25.051548938109114,-53.576251961625545],[-24.854899611619256,-53.33460327271597]];
+        var layer_3_ZPAs_3 = new L.imageOverlay(img_3_ZPAs_3,
+                                              img_bounds_3_ZPAs_3,
+                                              {pane: 'pane_3_ZPAs_3'});
+        bounds_group.addLayer(layer_3_ZPAs_3);
+        map.createPane('pane_4_ProxFavoravel_4');
+        map.getPane('pane_4_ProxFavoravel_4').style.zIndex = 404;
+        var img_4_ProxFavoravel_4 = 'data/4_ProxFavoravel_4.png';
+        var img_bounds_4_ProxFavoravel_4 = [[-25.051548938109114,-53.576251961625545],[-24.854899611619256,-53.33460327271597]];
+        var layer_4_ProxFavoravel_4 = new L.imageOverlay(img_4_ProxFavoravel_4,
+                                              img_bounds_4_ProxFavoravel_4,
+                                              {pane: 'pane_4_ProxFavoravel_4'});
+        bounds_group.addLayer(layer_4_ProxFavoravel_4);
+        map.createPane('pane_5_UsoSolo_5');
+        map.getPane('pane_5_UsoSolo_5').style.zIndex = 405;
+        var img_5_UsoSolo_5 = 'data/5_UsoSolo_5.png';
+        var img_bounds_5_UsoSolo_5 = [[-25.051501950124468,-53.57625602379848],[-24.85485262334375,-53.33460742767586]];
+        var layer_5_UsoSolo_5 = new L.imageOverlay(img_5_UsoSolo_5,
+                                              img_bounds_5_UsoSolo_5,
+                                              {pane: 'pane_5_UsoSolo_5'});
+        bounds_group.addLayer(layer_5_UsoSolo_5);
+        map.createPane('pane_6_TiposSolo_6');
+        map.getPane('pane_6_TiposSolo_6').style.zIndex = 406;
+        var img_6_TiposSolo_6 = 'data/6_TiposSolo_6.png';
+        var img_bounds_6_TiposSolo_6 = [[-25.051548938109114,-53.576251961625545],[-24.854899611619256,-53.33460327271597]];
+        var layer_6_TiposSolo_6 = new L.imageOverlay(img_6_TiposSolo_6,
+                                              img_bounds_6_TiposSolo_6,
+                                              {pane: 'pane_6_TiposSolo_6'});
+        bounds_group.addLayer(layer_6_TiposSolo_6);
+        map.createPane('pane_7_EvitarAprox_7');
+        map.getPane('pane_7_EvitarAprox_7').style.zIndex = 407;
+        var img_7_EvitarAprox_7 = 'data/7_EvitarAprox_7.png';
+        var img_bounds_7_EvitarAprox_7 = [[-25.051548938109114,-53.576251961625545],[-24.854899611619256,-53.33460327271597]];
+        var layer_7_EvitarAprox_7 = new L.imageOverlay(img_7_EvitarAprox_7,
+                                              img_bounds_7_EvitarAprox_7,
+                                              {pane: 'pane_7_EvitarAprox_7'});
+        bounds_group.addLayer(layer_7_EvitarAprox_7);
+        map.createPane('pane_8_Imoveis_8');
+        map.getPane('pane_8_Imoveis_8').style.zIndex = 408;
+        var img_8_Imoveis_8 = 'data/8_Imoveis_8.png';
+        var img_bounds_8_Imoveis_8 = [[-25.051548938109114,-53.576251961625545],[-24.854899611619256,-53.33460327271597]];
+        var layer_8_Imoveis_8 = new L.imageOverlay(img_8_Imoveis_8,
+                                              img_bounds_8_Imoveis_8,
+                                              {pane: 'pane_8_Imoveis_8'});
+        bounds_group.addLayer(layer_8_Imoveis_8);
+        map.createPane('pane_9_AreasRestritas_9');
+        map.getPane('pane_9_AreasRestritas_9').style.zIndex = 409;
+        var img_9_AreasRestritas_9 = 'data/9_AreasRestritas_9.png';
+        var img_bounds_9_AreasRestritas_9 = [[-25.051548938109114,-53.576251961625545],[-24.854899611619256,-53.33460327271597]];
+        var layer_9_AreasRestritas_9 = new L.imageOverlay(img_9_AreasRestritas_9,
+                                              img_bounds_9_AreasRestritas_9,
+                                              {pane: 'pane_9_AreasRestritas_9'});
+        bounds_group.addLayer(layer_9_AreasRestritas_9);
+        map.createPane('pane_Acumulado_10');
+        map.getPane('pane_Acumulado_10').style.zIndex = 410;
+        var img_Acumulado_10 = 'data/Acumulado_10.png';
+        var img_bounds_Acumulado_10 = [[-25.05124753839778,-53.57586459486381],[-24.855180297698507,-53.33482437164112]];
+        var layer_Acumulado_10 = new L.imageOverlay(img_Acumulado_10,
+                                              img_bounds_Acumulado_10,
+                                              {pane: 'pane_Acumulado_10'});
+        bounds_group.addLayer(layer_Acumulado_10);
+        function pop_Classe_11(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -96,11 +176,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Classe_1_0(feature) {
+        function style_Classe_11_0(feature) {
             switch(String(feature.properties['Classe'])) {
                 case '1':
                     return {
-                pane: 'pane_Classe_1',
+                pane: 'pane_Classe_11',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.0)',
                 dashArray: '',
@@ -115,7 +195,7 @@
                     break;
                 case '2':
                     return {
-                pane: 'pane_Classe_1',
+                pane: 'pane_Classe_11',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.0)',
                 dashArray: '',
@@ -130,7 +210,7 @@
                     break;
                 case '3':
                     return {
-                pane: 'pane_Classe_1',
+                pane: 'pane_Classe_11',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.0)',
                 dashArray: '',
@@ -145,7 +225,7 @@
                     break;
                 case '4':
                     return {
-                pane: 'pane_Classe_1',
+                pane: 'pane_Classe_11',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.0)',
                 dashArray: '',
@@ -160,7 +240,7 @@
                     break;
                 case '5':
                     return {
-                pane: 'pane_Classe_1',
+                pane: 'pane_Classe_11',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.0)',
                 dashArray: '',
@@ -175,7 +255,7 @@
                     break;
                 case '6':
                     return {
-                pane: 'pane_Classe_1',
+                pane: 'pane_Classe_11',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.0)',
                 dashArray: '',
@@ -190,7 +270,7 @@
                     break;
                 case '7':
                     return {
-                pane: 'pane_Classe_1',
+                pane: 'pane_Classe_11',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.0)',
                 dashArray: '',
@@ -205,7 +285,7 @@
                     break;
                 default:
                     return {
-                pane: 'pane_Classe_1',
+                pane: 'pane_Classe_11',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.0)',
                 dashArray: '',
@@ -220,21 +300,21 @@
                     break;
             }
         }
-        map.createPane('pane_Classe_1');
-        map.getPane('pane_Classe_1').style.zIndex = 401;
-        map.getPane('pane_Classe_1').style['mix-blend-mode'] = 'normal';
-        var layer_Classe_1 = new L.geoJson(json_Classe_1, {
+        map.createPane('pane_Classe_11');
+        map.getPane('pane_Classe_11').style.zIndex = 411;
+        map.getPane('pane_Classe_11').style['mix-blend-mode'] = 'normal';
+        var layer_Classe_11 = new L.geoJson(json_Classe_11, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Classe_1',
-            layerName: 'layer_Classe_1',
-            pane: 'pane_Classe_1',
-            onEachFeature: pop_Classe_1,
-            style: style_Classe_1_0,
+            dataVar: 'json_Classe_11',
+            layerName: 'layer_Classe_11',
+            pane: 'pane_Classe_11',
+            onEachFeature: pop_Classe_11,
+            style: style_Classe_11_0,
         });
-        bounds_group.addLayer(layer_Classe_1);
-        map.addLayer(layer_Classe_1);
-        function pop_Ecoparque_2(feature, layer) {
+        bounds_group.addLayer(layer_Classe_11);
+        map.addLayer(layer_Classe_11);
+        function pop_Ecoparque_12(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -263,9 +343,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Ecoparque_2_0() {
+        function style_Ecoparque_12_0() {
             return {
-                pane: 'pane_Ecoparque_2',
+                pane: 'pane_Ecoparque_12',
                 opacity: 1,
                 color: 'rgba(227,26,28,1.0)',
                 dashArray: '',
@@ -275,28 +355,28 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(114,155,111,0.0)',
-                interactive: false,
+                interactive: true,
             }
         }
-        map.createPane('pane_Ecoparque_2');
-        map.getPane('pane_Ecoparque_2').style.zIndex = 402;
-        map.getPane('pane_Ecoparque_2').style['mix-blend-mode'] = 'normal';
-        var layer_Ecoparque_2 = new L.geoJson(json_Ecoparque_2, {
+        map.createPane('pane_Ecoparque_12');
+        map.getPane('pane_Ecoparque_12').style.zIndex = 412;
+        map.getPane('pane_Ecoparque_12').style['mix-blend-mode'] = 'normal';
+        var layer_Ecoparque_12 = new L.geoJson(json_Ecoparque_12, {
             attribution: '',
-            interactive: false,
-            dataVar: 'json_Ecoparque_2',
-            layerName: 'layer_Ecoparque_2',
-            pane: 'pane_Ecoparque_2',
-            onEachFeature: pop_Ecoparque_2,
-            style: style_Ecoparque_2_0,
+            interactive: true,
+            dataVar: 'json_Ecoparque_12',
+            layerName: 'layer_Ecoparque_12',
+            pane: 'pane_Ecoparque_12',
+            onEachFeature: pop_Ecoparque_12,
+            style: style_Ecoparque_12_0,
         });
-        bounds_group.addLayer(layer_Ecoparque_2);
-        map.addLayer(layer_Ecoparque_2);
+        bounds_group.addLayer(layer_Ecoparque_12);
+        map.addLayer(layer_Ecoparque_12);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/Ecoparque_2.png" /> Ecoparque': layer_Ecoparque_2,'Classe<br /><table><tr><td style="text-align: center;"><img src="legend/Classe_1_10.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/Classe_1_21.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/Classe_1_32.png" /></td><td>3</td></tr><tr><td style="text-align: center;"><img src="legend/Classe_1_43.png" /></td><td>4</td></tr><tr><td style="text-align: center;"><img src="legend/Classe_1_54.png" /></td><td>5</td></tr><tr><td style="text-align: center;"><img src="legend/Classe_1_65.png" /></td><td>6</td></tr><tr><td style="text-align: center;"><img src="legend/Classe_1_76.png" /></td><td>7</td></tr><tr><td style="text-align: center;"><img src="legend/Classe_1_7.png" /></td><td></td></tr></table>': layer_Classe_1,"Google Satellite": layer_GoogleSatellite_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/Ecoparque_12.png" /> Ecoparque': layer_Ecoparque_12,'Classe<br /><table><tr><td style="text-align: center;"><img src="legend/Classe_11_10.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/Classe_11_21.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/Classe_11_32.png" /></td><td>3</td></tr><tr><td style="text-align: center;"><img src="legend/Classe_11_43.png" /></td><td>4</td></tr><tr><td style="text-align: center;"><img src="legend/Classe_11_54.png" /></td><td>5</td></tr><tr><td style="text-align: center;"><img src="legend/Classe_11_65.png" /></td><td>6</td></tr><tr><td style="text-align: center;"><img src="legend/Classe_11_76.png" /></td><td>7</td></tr><tr><td style="text-align: center;"><img src="legend/Classe_11_7.png" /></td><td></td></tr></table>': layer_Classe_11,"Acumulado": layer_Acumulado_10,"9_AreasRestritas": layer_9_AreasRestritas_9,"8_Imoveis": layer_8_Imoveis_8,"7_EvitarAprox": layer_7_EvitarAprox_7,"6_TiposSolo": layer_6_TiposSolo_6,"5_UsoSolo": layer_5_UsoSolo_5,"4_ProxFavoravel": layer_4_ProxFavoravel_4,"3_ZPAs": layer_3_ZPAs_3,"2_InfraViaria": layer_2_InfraViaria_2,"1_Declividade": layer_1_Declividade_1,"Google Satellite": layer_GoogleSatellite_0,},{collapsed:false}).addTo(map);
         setBounds();
         map.addControl(new L.Control.Search({
-            layer: layer_Classe_1,
+            layer: layer_Classe_11,
             initial: false,
             hideMarkerOnCollapse: true,
             propertyName: 'Classe'}));
@@ -451,6 +531,11 @@
             val_Classe.innerHTML = values.join(' - ');
                 filterFunc()
             });
+        L.ImageOverlay.include({
+            getBounds: function () {
+                return this._bounds;
+            }
+        });
         </script>
     </body>
 </html>
