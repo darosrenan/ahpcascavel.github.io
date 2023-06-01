@@ -8,6 +8,9 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="stylesheet" href="css/leaflet.css">
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/leaflet-search.css">
+        <link rel="stylesheet" href="css/filter.css">
+<link rel="stylesheet" href="css/nouislider.min.css">
         <style>
         html, body, #map {
             width: 100%;
@@ -30,8 +33,18 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="data/Ecoparque_11.js"></script>
+        <script src="js/leaflet-search.js"></script>
+        <script src="js/tailDT.js"></script>
+<script src="js/nouislider.min.js"></script>
+<script src="js/wNumb.js"></script>
+        <script src="data/Classe_1.js"></script>
+        <script src="data/Ecoparque_2.js"></script>
         <script>
+        var highlightLayer;
+        function highlightFeature(e) {
+            highlightLayer = e.target;
+            highlightLayer.openPopup();
+        }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
         })
@@ -57,97 +70,183 @@
         });
         layer_GoogleSatellite_0;
         map.addLayer(layer_GoogleSatellite_0);
-        map.createPane('pane_1_Declividade_1');
-        map.getPane('pane_1_Declividade_1').style.zIndex = 401;
-        var img_1_Declividade_1 = 'data/1_Declividade_1.png';
-        var img_bounds_1_Declividade_1 = [[-25.05124753839778,-53.57586459486381],[-24.855180297698507,-53.33482437164112]];
-        var layer_1_Declividade_1 = new L.imageOverlay(img_1_Declividade_1,
-                                              img_bounds_1_Declividade_1,
-                                              {pane: 'pane_1_Declividade_1'});
-        bounds_group.addLayer(layer_1_Declividade_1);
-        map.addLayer(layer_1_Declividade_1);
-        map.createPane('pane_2_InfraViaria_2');
-        map.getPane('pane_2_InfraViaria_2').style.zIndex = 402;
-        var img_2_InfraViaria_2 = 'data/2_InfraViaria_2.png';
-        var img_bounds_2_InfraViaria_2 = [[-25.051548938109114,-53.576251961625545],[-24.854899611619256,-53.33460327271597]];
-        var layer_2_InfraViaria_2 = new L.imageOverlay(img_2_InfraViaria_2,
-                                              img_bounds_2_InfraViaria_2,
-                                              {pane: 'pane_2_InfraViaria_2'});
-        bounds_group.addLayer(layer_2_InfraViaria_2);
-        map.addLayer(layer_2_InfraViaria_2);
-        map.createPane('pane_3_ZPAs_3');
-        map.getPane('pane_3_ZPAs_3').style.zIndex = 403;
-        var img_3_ZPAs_3 = 'data/3_ZPAs_3.png';
-        var img_bounds_3_ZPAs_3 = [[-25.051548938109114,-53.576251961625545],[-24.854899611619256,-53.33460327271597]];
-        var layer_3_ZPAs_3 = new L.imageOverlay(img_3_ZPAs_3,
-                                              img_bounds_3_ZPAs_3,
-                                              {pane: 'pane_3_ZPAs_3'});
-        bounds_group.addLayer(layer_3_ZPAs_3);
-        map.addLayer(layer_3_ZPAs_3);
-        map.createPane('pane_4_ProxFavoravel_4');
-        map.getPane('pane_4_ProxFavoravel_4').style.zIndex = 404;
-        var img_4_ProxFavoravel_4 = 'data/4_ProxFavoravel_4.png';
-        var img_bounds_4_ProxFavoravel_4 = [[-25.051548938109114,-53.576251961625545],[-24.854899611619256,-53.33460327271597]];
-        var layer_4_ProxFavoravel_4 = new L.imageOverlay(img_4_ProxFavoravel_4,
-                                              img_bounds_4_ProxFavoravel_4,
-                                              {pane: 'pane_4_ProxFavoravel_4'});
-        bounds_group.addLayer(layer_4_ProxFavoravel_4);
-        map.addLayer(layer_4_ProxFavoravel_4);
-        map.createPane('pane_5_UsoSolo_5');
-        map.getPane('pane_5_UsoSolo_5').style.zIndex = 405;
-        var img_5_UsoSolo_5 = 'data/5_UsoSolo_5.png';
-        var img_bounds_5_UsoSolo_5 = [[-25.051501950124468,-53.57625602379848],[-24.85485262334375,-53.33460742767586]];
-        var layer_5_UsoSolo_5 = new L.imageOverlay(img_5_UsoSolo_5,
-                                              img_bounds_5_UsoSolo_5,
-                                              {pane: 'pane_5_UsoSolo_5'});
-        bounds_group.addLayer(layer_5_UsoSolo_5);
-        map.addLayer(layer_5_UsoSolo_5);
-        map.createPane('pane_6_TiposSolo_6');
-        map.getPane('pane_6_TiposSolo_6').style.zIndex = 406;
-        var img_6_TiposSolo_6 = 'data/6_TiposSolo_6.png';
-        var img_bounds_6_TiposSolo_6 = [[-25.051548938109114,-53.576251961625545],[-24.854899611619256,-53.33460327271597]];
-        var layer_6_TiposSolo_6 = new L.imageOverlay(img_6_TiposSolo_6,
-                                              img_bounds_6_TiposSolo_6,
-                                              {pane: 'pane_6_TiposSolo_6'});
-        bounds_group.addLayer(layer_6_TiposSolo_6);
-        map.addLayer(layer_6_TiposSolo_6);
-        map.createPane('pane_7_EvitarAprox_7');
-        map.getPane('pane_7_EvitarAprox_7').style.zIndex = 407;
-        var img_7_EvitarAprox_7 = 'data/7_EvitarAprox_7.png';
-        var img_bounds_7_EvitarAprox_7 = [[-25.051548938109114,-53.576251961625545],[-24.854899611619256,-53.33460327271597]];
-        var layer_7_EvitarAprox_7 = new L.imageOverlay(img_7_EvitarAprox_7,
-                                              img_bounds_7_EvitarAprox_7,
-                                              {pane: 'pane_7_EvitarAprox_7'});
-        bounds_group.addLayer(layer_7_EvitarAprox_7);
-        map.addLayer(layer_7_EvitarAprox_7);
-        map.createPane('pane_8_Imoveis_8');
-        map.getPane('pane_8_Imoveis_8').style.zIndex = 408;
-        var img_8_Imoveis_8 = 'data/8_Imoveis_8.png';
-        var img_bounds_8_Imoveis_8 = [[-25.051548938109114,-53.576251961625545],[-24.854899611619256,-53.33460327271597]];
-        var layer_8_Imoveis_8 = new L.imageOverlay(img_8_Imoveis_8,
-                                              img_bounds_8_Imoveis_8,
-                                              {pane: 'pane_8_Imoveis_8'});
-        bounds_group.addLayer(layer_8_Imoveis_8);
-        map.addLayer(layer_8_Imoveis_8);
-        map.createPane('pane_9_AreasRestritas_9');
-        map.getPane('pane_9_AreasRestritas_9').style.zIndex = 409;
-        var img_9_AreasRestritas_9 = 'data/9_AreasRestritas_9.png';
-        var img_bounds_9_AreasRestritas_9 = [[-25.051548938109114,-53.576251961625545],[-24.854899611619256,-53.33460327271597]];
-        var layer_9_AreasRestritas_9 = new L.imageOverlay(img_9_AreasRestritas_9,
-                                              img_bounds_9_AreasRestritas_9,
-                                              {pane: 'pane_9_AreasRestritas_9'});
-        bounds_group.addLayer(layer_9_AreasRestritas_9);
-        map.addLayer(layer_9_AreasRestritas_9);
-        map.createPane('pane_Acumulado_10');
-        map.getPane('pane_Acumulado_10').style.zIndex = 410;
-        var img_Acumulado_10 = 'data/Acumulado_10.png';
-        var img_bounds_Acumulado_10 = [[-25.05124753839778,-53.57586459486381],[-24.855180297698507,-53.33482437164112]];
-        var layer_Acumulado_10 = new L.imageOverlay(img_Acumulado_10,
-                                              img_bounds_Acumulado_10,
-                                              {pane: 'pane_Acumulado_10'});
-        bounds_group.addLayer(layer_Acumulado_10);
-        map.addLayer(layer_Acumulado_10);
-        function pop_Ecoparque_11(feature, layer) {
+        function pop_Classe_1(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">fid</th>\
+                        <td>' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Classe</th>\
+                        <td>' + (feature.properties['Classe'] !== null ? autolinker.link(feature.properties['Classe'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Classe_1_0(feature) {
+            switch(String(feature.properties['Classe'])) {
+                case '1':
+                    return {
+                pane: 'pane_Classe_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,245,240,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_Classe_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(254,220,205,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_Classe_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(252,179,152,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '4':
+                    return {
+                pane: 'pane_Classe_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(252,134,102,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '5':
+                    return {
+                pane: 'pane_Classe_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(246,87,62,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '6':
+                    return {
+                pane: 'pane_Classe_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(221,42,37,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '7':
+                    return {
+                pane: 'pane_Classe_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(179,18,24,1.0)',
+                interactive: true,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_Classe_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(103,0,13,1.0)',
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Classe_1');
+        map.getPane('pane_Classe_1').style.zIndex = 401;
+        map.getPane('pane_Classe_1').style['mix-blend-mode'] = 'normal';
+        var layer_Classe_1 = new L.geoJson(json_Classe_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Classe_1',
+            layerName: 'layer_Classe_1',
+            pane: 'pane_Classe_1',
+            onEachFeature: pop_Classe_1,
+            style: style_Classe_1_0,
+        });
+        bounds_group.addLayer(layer_Classe_1);
+        map.addLayer(layer_Classe_1);
+        function pop_Ecoparque_2(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">fid</th>\
@@ -164,9 +263,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Ecoparque_11_0() {
+        function style_Ecoparque_2_0() {
             return {
-                pane: 'pane_Ecoparque_11',
+                pane: 'pane_Ecoparque_2',
                 opacity: 1,
                 color: 'rgba(227,26,28,1.0)',
                 dashArray: '',
@@ -176,40 +275,182 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(114,155,111,0.0)',
-                interactive: true,
+                interactive: false,
             }
         }
-        map.createPane('pane_Ecoparque_11');
-        map.getPane('pane_Ecoparque_11').style.zIndex = 411;
-        map.getPane('pane_Ecoparque_11').style['mix-blend-mode'] = 'normal';
-        var layer_Ecoparque_11 = new L.geoJson(json_Ecoparque_11, {
+        map.createPane('pane_Ecoparque_2');
+        map.getPane('pane_Ecoparque_2').style.zIndex = 402;
+        map.getPane('pane_Ecoparque_2').style['mix-blend-mode'] = 'normal';
+        var layer_Ecoparque_2 = new L.geoJson(json_Ecoparque_2, {
             attribution: '',
-            interactive: true,
-            dataVar: 'json_Ecoparque_11',
-            layerName: 'layer_Ecoparque_11',
-            pane: 'pane_Ecoparque_11',
-            onEachFeature: pop_Ecoparque_11,
-            style: style_Ecoparque_11_0,
+            interactive: false,
+            dataVar: 'json_Ecoparque_2',
+            layerName: 'layer_Ecoparque_2',
+            pane: 'pane_Ecoparque_2',
+            onEachFeature: pop_Ecoparque_2,
+            style: style_Ecoparque_2_0,
         });
-        bounds_group.addLayer(layer_Ecoparque_11);
-        map.addLayer(layer_Ecoparque_11);
-        map.createPane('pane_Classificado_12');
-        map.getPane('pane_Classificado_12').style.zIndex = 412;
-        var img_Classificado_12 = 'data/Classificado_12.png';
-        var img_bounds_Classificado_12 = [[-25.05124753839778,-53.57586459486381],[-24.855180297698507,-53.33482437164112]];
-        var layer_Classificado_12 = new L.imageOverlay(img_Classificado_12,
-                                              img_bounds_Classificado_12,
-                                              {pane: 'pane_Classificado_12'});
-        bounds_group.addLayer(layer_Classificado_12);
-        map.addLayer(layer_Classificado_12);
+        bounds_group.addLayer(layer_Ecoparque_2);
+        map.addLayer(layer_Ecoparque_2);
         var baseMaps = {};
-        L.control.layers(baseMaps,{"Classificado": layer_Classificado_12,'<img src="legend/Ecoparque_11.png" /> Ecoparque': layer_Ecoparque_11,"Acumulado": layer_Acumulado_10,"9_AreasRestritas": layer_9_AreasRestritas_9,"8_Imoveis": layer_8_Imoveis_8,"7_EvitarAprox": layer_7_EvitarAprox_7,"6_TiposSolo": layer_6_TiposSolo_6,"5_UsoSolo": layer_5_UsoSolo_5,"4_ProxFavoravel": layer_4_ProxFavoravel_4,"3_ZPAs": layer_3_ZPAs_3,"2_InfraViaria": layer_2_InfraViaria_2,"1_Declividade": layer_1_Declividade_1,"Google Satellite": layer_GoogleSatellite_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/Ecoparque_2.png" /> Ecoparque': layer_Ecoparque_2,'Classe<br /><table><tr><td style="text-align: center;"><img src="legend/Classe_1_10.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/Classe_1_21.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/Classe_1_32.png" /></td><td>3</td></tr><tr><td style="text-align: center;"><img src="legend/Classe_1_43.png" /></td><td>4</td></tr><tr><td style="text-align: center;"><img src="legend/Classe_1_54.png" /></td><td>5</td></tr><tr><td style="text-align: center;"><img src="legend/Classe_1_65.png" /></td><td>6</td></tr><tr><td style="text-align: center;"><img src="legend/Classe_1_76.png" /></td><td>7</td></tr><tr><td style="text-align: center;"><img src="legend/Classe_1_7.png" /></td><td></td></tr></table>': layer_Classe_1,"Google Satellite": layer_GoogleSatellite_0,},{collapsed:false}).addTo(map);
         setBounds();
-        L.ImageOverlay.include({
-            getBounds: function () {
-                return this._bounds;
+        map.addControl(new L.Control.Search({
+            layer: layer_Classe_1,
+            initial: false,
+            hideMarkerOnCollapse: true,
+            propertyName: 'Classe'}));
+        document.getElementsByClassName('search-button')[0].className +=
+         ' fa fa-binoculars';
+        var mapDiv = document.getElementById('map');
+        var row = document.createElement('div');
+        row.className="row";
+        row.id="all";
+        row.style.height = "100%";
+        var col1 = document.createElement('div');
+        col1.className="col9";
+        col1.id = "mapWindow";
+        col1.style.height = "99%";
+        col1.style.width = "80%";
+        col1.style.display = "inline-block";
+        var col2 = document.createElement('div');
+        col2.className="col3";
+        col2.id = "menu";
+        col2.style.display = "inline-block";
+        mapDiv.parentNode.insertBefore(row, mapDiv);
+        document.getElementById("all").appendChild(col1);
+        document.getElementById("all").appendChild(col2);
+        col1.appendChild(mapDiv)
+        var Filters = {"Classe": "int"};
+        function filterFunc() {
+          map.eachLayer(function(lyr){
+          if ("options" in lyr && "dataVar" in lyr["options"]){
+            features = this[lyr["options"]["dataVar"]].features.slice(0);
+            try{
+              for (key in Filters){
+                keyS = key.replace(/[^a-zA-Z0-9_]/g, "")
+                if (Filters[key] == "str" || Filters[key] == "bool"){
+                  var selection = [];
+                  var options = document.getElementById("sel_" + keyS).options
+                  for (var i=0; i < options.length; i++) {
+                    if (options[i].selected) selection.push(options[i].value);
+                  }
+                    try{
+                      if (key in features[0].properties){
+                        for (i = features.length - 1;
+                          i >= 0; --i){
+                          if (selection.indexOf(
+                          features[i].properties[key])<0
+                          && selection.length>0) {
+                          features.splice(i,1);
+                          }
+                        }
+                      }
+                    } catch(err){
+                  }
+                }
+                if (Filters[key] == "int"){
+                  sliderVals =  document.getElementById(
+                    "div_" + keyS).noUiSlider.get();
+                  try{
+                    if (key in features[0].properties){
+                    for (i = features.length - 1; i >= 0; --i){
+                      if (parseInt(features[i].properties[key])
+                          < sliderVals[0]
+                          || parseInt(features[i].properties[key])
+                          > sliderVals[1]){
+                            features.splice(i,1);
+                          }
+                        }
+                      }
+                    } catch(err){
+                    }
+                  }
+                if (Filters[key] == "real"){
+                  sliderVals =  document.getElementById(
+                    "div_" + keyS).noUiSlider.get();
+                  try{
+                    if (key in features[0].properties){
+                    for (i = features.length - 1; i >= 0; --i){
+                      if (features[i].properties[key]
+                          < sliderVals[0]
+                          || features[i].properties[key]
+                          > sliderVals[1]){
+                            features.splice(i,1);
+                          }
+                        }
+                      }
+                    } catch(err){
+                    }
+                  }
+                if (Filters[key] == "date"
+                  || Filters[key] == "datetime"
+                  || Filters[key] == "time"){
+                  try{
+                    if (key in features[0].properties){
+                      HTMLkey = key.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, '');
+                      startdate = document.getElementById("dat_" +
+                        HTMLkey + "_date1").value.replace(" ", "T");
+                      enddate = document.getElementById("dat_" +
+                        HTMLkey + "_date2").value.replace(" ", "T");
+                      for (i = features.length - 1; i >= 0; --i){
+                        if (features[i].properties[key] < startdate
+                          || features[i].properties[key] > enddate){
+                          features.splice(i,1);
+                        }
+                      }
+                    }
+                  } catch(err){
+                  }
+                }
+              }
+            } catch(err){
             }
-        });
+          this[lyr["options"]["layerName"]].clearLayers();
+          this[lyr["options"]["layerName"]].addData(features);
+          }
+          })
+        }
+            document.getElementById("menu").appendChild(
+                document.createElement("div"));
+            var div_Classe = document.createElement("div");
+            div_Classe.id = "div_Classe";
+            div_Classe.className = "slider";
+            document.getElementById("menu").appendChild(div_Classe);
+            var lab_Classe = document.createElement('div');
+            lab_Classe.innerHTML  = 'Classe: <span id="val_Classe"></span>';
+            lab_Classe.className = 'filterlabel';
+            document.getElementById("menu").appendChild(lab_Classe);
+            var reset_Classe = document.createElement('div');
+            reset_Classe.innerHTML = 'clear filter';
+            reset_Classe.className = 'filterlabel';
+            lab_Classe.className = 'filterlabel';
+            reset_Classe.onclick = function() {
+                sel_Classe.noUiSlider.reset();
+            };
+            document.getElementById("menu").appendChild(reset_Classe);
+            var sel_Classe = document.getElementById('div_Classe');
+            noUiSlider.create(sel_Classe, {
+                connect: true,
+                start: [1, 7],
+                step: 1,
+                format: wNumb({
+                    decimals: 0,
+                    }),
+                range: {
+                min: 1,
+                max: 7
+                }
+            });
+            sel_Classe.noUiSlider.on('update', function (values) {
+            filterVals =[];
+            for (value in values){
+            filterVals.push(parseInt(value))
+            }
+            val_Classe = document.getElementById('val_Classe');
+            val_Classe.innerHTML = values.join(' - ');
+                filterFunc()
+            });
         </script>
     </body>
 </html>
